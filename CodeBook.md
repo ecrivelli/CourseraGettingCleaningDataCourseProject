@@ -20,14 +20,14 @@ Orignal files from Human Activity Recognition Using Smartphones Dataset[1]:
 Derivated new datasets created by run_analysis R script:
 - **SamsungGalaxyS.txt**: which merges the test and train sets from the Samsung Galaxy S smartphone for the mean and standard deviation measurements with descriptive activity names and labels.
 - **SamsungGalaxySAverages.txt**: which summarizes the file above by the average of each variable for each activity and each subject.
- 
-in order to create the SamsungGalaxyS.txt the run_analysis R script:
-- Merges the training and the test sets to create one data set.
-- Extracts only the measurements on the mean and standard deviation for each measurement.
-- Uses descriptive activity names to name the activities in the data set according to this six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+
+In order to create the SamsungGalaxyS.txt, the **run_analysis.R** script:
+- Merges the training and the test (sets and labels) to create one single data set;
+- Extracts only the measurements on the mean and standard deviation for each measurement;
+- Uses descriptive activity names (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) to name the activities in the data set;
 - Appropriately labels the data set with descriptive variable names.
 
-in order to create the SamsungGalaxySAverages.txt the run_analysis R script used the data from the SamsungGalaxyS.txt file and summarized a tidy data set with the average of each variable for each activity and each subject.
+In the case of the SamsungGalaxySAverages.txt, the run_analysis R script uses the same data source from the SamsungGalaxyS.txt file and summarize it by the average of each variable for each activity and each subject.
 
 
 The following variables are available in the two new files, their descriptions follows the original documentation [1]. 
