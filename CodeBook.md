@@ -30,7 +30,7 @@ In order to create the SamsungGalaxyS.txt, the **run_analysis.R** script:
 In the case of the SamsungGalaxySAverages.txt, the run_analysis R script uses the same data source from the SamsungGalaxyS.txt file and summarize it by the average of each variable for each activity and each subject.
 
 
-The following variables are available in the two new files, their descriptions follows the original documentation [1]. 
+The following variables are available in the two new files and their descriptions follows the original documentation[1]. 
 
 |index|feature|
 |---|---|
