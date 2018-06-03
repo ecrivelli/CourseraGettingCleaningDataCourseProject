@@ -24,11 +24,11 @@ if you want to read those files, something like this line of code in R will do:
 
 ### Set up
 First you need to download or clone this entire project. After that, you must change the variable My_WORKING_DIRECTORY inside the run_analysis.R to point your directory structure correctly.
+
 ```MY_WORKING_DIRECTORY <- "./GettingAndCleaningData/course_project/" #TODO: change it to reflect your own directory structure```
 
-I decided to fill run_analysis.R with comments and print out each major step of the script on the console window so that my code could be more readable.
 
-When you are all set, please type the command below on your console and see the script performing its magic. :)
+I decided to fill run_analysis.R with comments and print out each major step of the script on the console window so that my code could be more readable. When you are all set, please type the command below on your console and see the script performing its magic. :)
 
 ```run_analysis()```
 
