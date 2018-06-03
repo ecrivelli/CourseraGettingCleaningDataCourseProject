@@ -5,6 +5,8 @@
 ## Course Project - Main script - run_analysis()                                                                                           ##
 ## ---------------------------------------------                                                                                           ##
 ##                                                                                                                                         ##
+## TODO: Change the directory path to reflect your own directory structure                                                                 ##
+##                                                                                                                                         ##
 ## PART A                                                                                                                                  ##
 ## Creates a new tidy data file based on Samsung Galaxy S smartphone data named SamsungGalaxyS.txt following the instructions bellow:      ##
 ##      1 - Merges the training and the test sets to create one data set.                                                                  ##
@@ -20,7 +22,12 @@
 #############################################################################################################################################
 run_analysis <- function(){
         library(dplyr)
+        library(stringr)
 
+        ###########################################################################################################################
+        MY_WORKING_DIRECTORY <- "./GettingAndCleaningData/course_project/" #TODO: change it to reflect your own directory structure
+        ###########################################################################################################################
+        
         # PART A - Begin
         ################
         print("PART A - Begin")
@@ -29,19 +36,19 @@ run_analysis <- function(){
         #################################
         print("    READING DATA - Common values")
         #(6 x 2) 'activity_labels.txt': Links the class labels with their activity name.
-        activity_labels <-read.csv("./GettingAndCleaningData/course_project/UCI\ HAR\ Dataset/activity_labels.txt", fill=TRUE, sep=" ", header=FALSE)
+        activity_labels <-read.csv(paste0(MY_WORKING_DIRECTORY, "UCI\ HAR\ Dataset/activity_labels.txt"), fill=TRUE, sep=" ", header=FALSE)
         #(561 x 2) features: List of all features.
-        features <-read.csv("./GettingAndCleaningData/course_project/UCI\ HAR\ Dataset/features.txt", fill=TRUE, sep=" ", header=FALSE)
+        features <-read.csv(paste0(MY_WORKING_DIRECTORY, "UCI\ HAR\ Dataset/features.txt"), fill=TRUE, sep=" ", header=FALSE)
 
         # READING DATA - Test values
         #############################
         print("    READING DATA - Test values")
         #(2947 x 1)'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
-        subjectTest <-read.csv("./GettingAndCleaningData/course_project/UCI\ HAR\ Dataset/test/subject_test.txt", fill=TRUE, sep=" ", header=FALSE)
+        subjectTest <-read.csv(paste0(MY_WORKING_DIRECTORY, "UCI\ HAR\ Dataset/test/subject_test.txt"), fill=TRUE, sep=" ", header=FALSE)
         #(2947 x 561) 'test/X_test.txt': Test set.
-        xTest <-read.csv("./GettingAndCleaningData/course_project/UCI\ HAR\ Dataset/test/X_test.txt", fill=TRUE, sep="", header=FALSE)
+        xTest <-read.csv(paste0(MY_WORKING_DIRECTORY, "UCI\ HAR\ Dataset/test/X_test.txt"), fill=TRUE, sep="", header=FALSE)
         #(2947 x 1) 'test/y_test.txt': Test labels.
-        yTest <-read.csv("./GettingAndCleaningData/course_project/UCI\ HAR\ Dataset/test/y_test.txt", fill=TRUE, sep=" ", header=FALSE)
+        yTest <-read.csv(paste0(MY_WORKING_DIRECTORY, "UCI\ HAR\ Dataset/test/y_test.txt"), fill=TRUE, sep=" ", header=FALSE)
         
         # TIDING DATA - Test values
         ############################
@@ -67,11 +74,11 @@ run_analysis <- function(){
         #############################
         print("    READING DATA - Train values")
         #(2947 x 1)'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
-        subjectTrain <-read.csv("./GettingAndCleaningData/course_project/UCI\ HAR\ Dataset/train/subject_train.txt", fill=TRUE, sep=" ", header=FALSE)
+        subjectTrain <-read.csv(paste0(MY_WORKING_DIRECTORY, "UCI\ HAR\ Dataset/train/subject_train.txt"), fill=TRUE, sep=" ", header=FALSE)
         #(2947 x 561) 'train/X_train.txt': Train set.
-        xTrain <-read.csv("./GettingAndCleaningData/course_project/UCI\ HAR\ Dataset/train/X_train.txt", fill=TRUE, sep="", header=FALSE)
+        xTrain <-read.csv(paste0(MY_WORKING_DIRECTORY, "UCI\ HAR\ Dataset/train/X_train.txt"), fill=TRUE, sep="", header=FALSE)
         #(2947 x 1) 'train/y_train.txt': Train labels.
-        yTrain <-read.csv("./GettingAndCleaningData/course_project/UCI\ HAR\ Dataset/train/y_train.txt", fill=TRUE, sep=" ", header=FALSE)
+        yTrain <-read.csv(paste0(MY_WORKING_DIRECTORY, "UCI\ HAR\ Dataset/train/y_train.txt"), fill=TRUE, sep=" ", header=FALSE)
         
         # TIDING DATA - Train values
         ############################
@@ -107,8 +114,8 @@ run_analysis <- function(){
         
         # SAVING NEW DATA SET
         #####################
-        print("    SAVING NEW DATA SET - PATH: ./GettingAndCleaningData/course_project/data/SamsungGalaxyS.txt")
-        write.table(tidyData,"./GettingAndCleaningData/course_project/data/SamsungGalaxyS.txt", row.name=FALSE)
+        print(paste0("    SAVING NEW DATA SET - PATH: ", MY_WORKING_DIRECTORY, "data/SamsungGalaxyS.txt"))
+        write.table(tidyData, paste0(MY_WORKING_DIRECTORY, "data/SamsungGalaxyS.txt"), row.name=FALSE)
         
         # PART A - END
         ########################
@@ -132,8 +139,8 @@ run_analysis <- function(){
         
         # SAVING NEW DATA SET
         #####################
-        print("    SAVING DATA SET - PATH: ./GettingAndCleaningData/course_project/data/SamsungGalaxySAverages.txt")
-        write.table(tidyData2, "./GettingAndCleaningData/course_project/data/SamsungGalaxySAverages.txt", row.names = FALSE)
+        print(paste0("    SAVING DATA SET - PATH: ", MY_WORKING_DIRECTORY, "data/SamsungGalaxySAverages.txt"))
+        write.table(tidyData2, paste0(MY_WORKING_DIRECTORY, "data/SamsungGalaxySAverages.txt"), row.names = FALSE)
         
         # PART B - END
         ########################
