@@ -6,7 +6,7 @@
 ## ---------------------------------------------                                                                                           ##
 ##                                                                                                                                         ##
 ## PART A                                                                                                                                  ##
-## Creates a new tidy data file based on Samsung Galaxy S smartphone data named SamsungGalaxyS.csv following the instructions bellow:      ##
+## Creates a new tidy data file based on Samsung Galaxy S smartphone data named SamsungGalaxyS.txt following the instructions bellow:      ##
 ##      1 - Merges the training and the test sets to create one data set.                                                                  ##
 ##      2 - Extracts only the measurements on the mean and standard deviation for each measurement.                                        ##
 ##      3 - Uses descriptive activity names to name the activities in the data set                                                         ##
@@ -14,14 +14,13 @@
 ##                                                                                                                                         ##
 ## PART B                                                                                                                                  ##
 ## From the data set in Part A, creates a second, independent tidy data set with the average of each variable for each activity and        ##
-## each subject and save it as a new data file SamsungGalaxySAverages.csv                                                                  ##
+## each subject and save it as a new data file SamsungGalaxySAverages.txt                                                                  ##
 ##                                                                                                                                         ##
 ## Samsung Galaxy S smartphone data available at (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). ##
 #############################################################################################################################################
 run_analysis <- function(){
         library(dplyr)
 
-        print(scr_path)
         # PART A - Begin
         ################
         print("PART A - Begin")
@@ -97,7 +96,7 @@ run_analysis <- function(){
         print("    TIDING DATA - Merging Test and Train values")
         tidyData <- bind_rows(tidyTest,tidyTrain)
         # Cleaning variables;
-        subjectTrain <-NULL; xTrain <-NULL; yTrain <-NULL;tidyTest<-NULL;tidyTrain<-NULL
+        subjectTrain <-NULL; xTrain <-NULL; yTrain <-NULL;tidyTest<-NULL;tidyTrain<-NULL;features <-NULL;activity_labels<-NULL
         
         # TIDING DATA - Last minute grooming
         ####################################
@@ -108,8 +107,8 @@ run_analysis <- function(){
         
         # SAVING NEW DATA SET
         #####################
-        print("    SAVING NEW DATA SET - PATH: ./GettingAndCleaningData/course_project/data/SamsungGalaxyS.csv")
-        write.csv(tidyData, "./GettingAndCleaningData/course_project/data/SamsungGalaxyS.csv", row.names = FALSE)
+        print("    SAVING NEW DATA SET - PATH: ./GettingAndCleaningData/course_project/data/SamsungGalaxyS.txt")
+        write.table(tidyData,"./GettingAndCleaningData/course_project/data/SamsungGalaxyS.txt", row.name=FALSE)
         
         # PART A - END
         ########################
@@ -133,8 +132,8 @@ run_analysis <- function(){
         
         # SAVING NEW DATA SET
         #####################
-        print("    SAVING DATA SET - PATH: ./GettingAndCleaningData/course_project/data/SamsungGalaxySAverages.csv")
-        write.csv(tidyData2, "./GettingAndCleaningData/course_project/data/SamsungGalaxySAverages.csv", row.names = FALSE)
+        print("    SAVING DATA SET - PATH: ./GettingAndCleaningData/course_project/data/SamsungGalaxySAverages.txt")
+        write.table(tidyData2, "./GettingAndCleaningData/course_project/data/SamsungGalaxySAverages.txt", row.names = FALSE)
         
         # PART B - END
         ########################

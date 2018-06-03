@@ -1,32 +1,128 @@
----
-title: "CodeBook.md"
-author: "Eduardo Crivelli"
-date: "June 3, 2018"
-output: html_document
----
+# Coursera - Getting and Cleaning Data by Johns Hopkins University
+<https://www.coursera.org/learn/data-cleaning/home/welcome>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+## Getting and Cleaning Data Course Project - Code book
 
-## R Markdown
+The purpose of this project is to demonstrate our ability as students to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis.
 
-##code book that describes the variables, the data, and any transformations or work that you performed to clean up the data 
+This code book describes the variables, the data, and work performed to clean up the data from Human Activity Recognition Using Smartphones Dataset Version 1.0 [1].
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### The dataset for this project includes the following files:
+Orignal files from Human Activity Recognition Using Smartphones [1]:
+- 'features.txt': List of all features.
+- 'activity_labels.txt': Links the class labels with their activity name.
+- 'train/X_train.txt': Training set.
+- 'train/y_train.txt': Training labels.
+- 'test/X_test.txt': Test set.
+- 'test/y_test.txt': Test labels.
 
-```{r cars}
-summary(cars)
-```
+Derivated new datasets created by run_analysis R script:
+- 'SamsungGalaxyS.txt' : which merges the test and train sets from the Samsung Galaxy S smartphone for the mean and standard deviation measurements with descriptive activity names and labels.
+- 'SamsungGalaxySAverages.txt' : which summarizes the file above. It contains the average of each variable for each activity and each subject.
+ 
+in order to create the SamsungGalaxyS.txt the run_analysis R script:
+- Merges the training and the test sets to create one data set.
+- Extracts only the measurements on the mean and standard deviation for each measurement.
+- Uses descriptive activity names to name the activities in the data set according to this six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+- Appropriately labels the data set with descriptive variable names.
 
-## Including Plots
+in order to create the SamsungGalaxySAverages.txt the run_analysis R script used the data from the SamsungGalaxyS.txt file and summarized a tidy data set with the average of each variable for each activity and each subject.
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+The following variables are available in the two new files, their descriptions follows the original documentation [1]. 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+index	variable
+1	subject
+2	activity
+3	tBodyAccmeanX
+4	tBodyAccmeanY
+5	tBodyAccmeanZ
+6	tBodyAccstdX
+7	tBodyAccstdY
+8	tBodyAccstdZ
+9	tGravityAccmeanX
+10	tGravityAccmeanY
+11	tGravityAccmeanZ
+12	tGravityAccstdX
+13	tGravityAccstdY
+14	tGravityAccstdZ
+15	tBodyAccJerkmeanX
+16	tBodyAccJerkmeanY
+17	tBodyAccJerkmeanZ
+18	tBodyAccJerkstdX
+19	tBodyAccJerkstdY
+20	tBodyAccJerkstdZ
+21	tBodyGyromeanX
+22	tBodyGyromeanY
+23	tBodyGyromeanZ
+24	tBodyGyrostdX
+25	tBodyGyrostdY
+26	tBodyGyrostdZ
+27	tBodyGyroJerkmeanX
+28	tBodyGyroJerkmeanY
+29	tBodyGyroJerkmeanZ
+30	tBodyGyroJerkstdX
+31	tBodyGyroJerkstdY
+32	tBodyGyroJerkstdZ
+33	tBodyAccMagmean
+34	tBodyAccMagstd
+35	tGravityAccMagmean
+36	tGravityAccMagstd
+37	tBodyAccJerkMagmean
+38	tBodyAccJerkMagstd
+39	tBodyGyroMagmean
+40	tBodyGyroMagstd
+41	tBodyGyroJerkMagmean
+42	tBodyGyroJerkMagstd
+43	fBodyAccmeanX
+44	fBodyAccmeanY
+45	fBodyAccmeanZ
+46	fBodyAccstdX
+47	fBodyAccstdY
+48	fBodyAccstdZ
+49	fBodyAccmeanFreqX
+50	fBodyAccmeanFreqY
+51	fBodyAccmeanFreqZ
+52	fBodyAccJerkmeanX
+53	fBodyAccJerkmeanY
+54	fBodyAccJerkmeanZ
+55	fBodyAccJerkstdX
+56	fBodyAccJerkstdY
+57	fBodyAccJerkstdZ
+58	fBodyAccJerkmeanFreqX
+59	fBodyAccJerkmeanFreqY
+60	fBodyAccJerkmeanFreqZ
+61	fBodyGyromeanX
+62	fBodyGyromeanY
+63	fBodyGyromeanZ
+64	fBodyGyrostdX
+65	fBodyGyrostdY
+66	fBodyGyrostdZ
+67	fBodyGyromeanFreqX
+68	fBodyGyromeanFreqY
+69	fBodyGyromeanFreqZ
+70	fBodyAccMagmean
+71	fBodyAccMagstd
+72	fBodyAccMagmeanFreq
+73	fBodyBodyAccJerkMagmean
+74	fBodyBodyAccJerkMagstd
+75	fBodyBodyAccJerkMagmeanFreq
+76	fBodyBodyGyroMagmean
+77	fBodyBodyGyroMagstd
+78	fBodyBodyGyroMagmeanFreq
+79	fBodyBodyGyroJerkMagmean
+80	fBodyBodyGyroJerkMagstd
+81	fBodyBodyGyroJerkMagmeanFreq
+82	angle(tBodyAccMean,gravity)
+83	angle(tBodyAccJerkMean),gravityMean)
+84	angle(tBodyGyroMean,gravityMean)
+85	angle(tBodyGyroJerkMean,gravityMean)
+86	angle(X,gravityMean)
+87	angle(Y,gravityMean)
+88	angle(Z,gravityMean)
+
+ 
+References:
+========
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
