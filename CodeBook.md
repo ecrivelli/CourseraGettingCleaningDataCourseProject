@@ -32,6 +32,10 @@ In the case of the SamsungGalaxySAverages.txt, the run_analysis R script uses th
 
 The following variables are available in the two new files, their descriptions follows the original documentation [1]. 
 
+|index|variable|
+|---|---|
+|1   |subject|
+|1   |activity|
 > index	variable
 > 1	subject
 > 2	activity
