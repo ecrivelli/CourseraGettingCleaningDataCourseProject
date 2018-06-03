@@ -35,8 +35,8 @@ In the case of the SamsungGalaxySAverages.txt, the run_analysis R script uses th
 
 The following variables are available in the two new files and their descriptions follows the original documentation[1]. I had only removed extra "()" and "-" in some features to make them more readable.
 
-        ```colnames(tidyData) <-gsub(pattern = "\\(\\)", replacement = "", colnames(tidyData))```
-        ```colnames(tidyData) <-gsub(pattern = "-", replacement = "", colnames(tidyData))```
+        colnames(tidyData) <-gsub(pattern = "\\(\\)", replacement = "", colnames(tidyData))
+        colnames(tidyData) <-gsub(pattern = "-", replacement = "", colnames(tidyData))
 
 |index|feature|
 |---|---|
