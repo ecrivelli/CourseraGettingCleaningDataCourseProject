@@ -14,8 +14,9 @@ This projetct has one R script called **run_analysis.R** that based on Samsung d
 2) **SamsungGalaxySAverages.txt** which summarizes the file above. It contains the average of each variable for each activity and each subject.
 
 if you want to read those files, something like this line of code in R will do:
+
 ```myTidyData <- read.table("./GettingAndCleaningData/course_project/data/SamsungGalaxyS.txt", header=TRUE)```
-```head(myTidyData)```
+
 
 ### Directory structure
 * UCI HAR Dataset: contains the Human Activity Recognition Using Smartphones Dataset[1].
