@@ -20,10 +20,7 @@
 #############################################################################################################################################
 run_analysis <- function(){
         library(dplyr)
-        library(utils)
-        scr_dir <- dirname(sys.frame(1)$ofile)
-        scr_path <- paste(scr_dir, "run_analysis.R", sep="/")
-        
+
         print(scr_path)
         # PART A - Begin
         ################
