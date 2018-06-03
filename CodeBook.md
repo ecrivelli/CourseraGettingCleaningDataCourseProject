@@ -5,21 +5,21 @@
 
 The purpose of this project is to demonstrate our ability as students to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis.
 
-This code book describes the variables, the data, and work performed to clean up the data from Human Activity Recognition Using Smartphones Dataset Version 1.0 [1].
+This code book describes the variables, the data, and work performed to clean up the data from the Human Activity Recognition Using Smartphones Dataset[1].
 
 
 ### The dataset for this project includes the following files:
-Orignal files from Human Activity Recognition Using Smartphones [1]:
-- 'features.txt': List of all features.
-- 'activity_labels.txt': Links the class labels with their activity name.
-- 'train/X_train.txt': Training set.
-- 'train/y_train.txt': Training labels.
-- 'test/X_test.txt': Test set.
-- 'test/y_test.txt': Test labels.
+Orignal files from Human Activity Recognition Using Smartphones Dataset[1]:
+- **features.txt**: List of all features.
+- **activity_labels.txt**: Links the class labels with their activity name.
+- **train/X_train.txt**: Training set.
+- **train/y_train.txt**: Training labels.
+- **test/X_test.txt**: Test set.
+- **test/y_test.txt**: Test labels.
 
 Derivated new datasets created by run_analysis R script:
-- 'SamsungGalaxyS.txt' : which merges the test and train sets from the Samsung Galaxy S smartphone for the mean and standard deviation measurements with descriptive activity names and labels.
-- 'SamsungGalaxySAverages.txt' : which summarizes the file above. It contains the average of each variable for each activity and each subject.
+- **SamsungGalaxyS.txt**: which merges the test and train sets from the Samsung Galaxy S smartphone for the mean and standard deviation measurements with descriptive activity names and labels.
+- **SamsungGalaxySAverages.txt**: which summarizes the file above by the average of each variable for each activity and each subject.
  
 in order to create the SamsungGalaxyS.txt the run_analysis R script:
 - Merges the training and the test sets to create one data set.
