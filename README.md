@@ -17,9 +17,8 @@ This projetct has one R script called **run_analysis.R** that based on Samsung d
 ### Set up
 First you need to download or clone this entire project to the structure of your working path. In case you do not know your working path use getwd() at the R console. Take a look at <https://support.rstudio.com/hc/en-us/articles/200711843-Working-Directories-and-Workspaces> for more on working directories in R.
 
-I decided to fill run_analysis.R with comments and print out each major step of the script on debug so that my code could be more readable.
+I decided to fill run_analysis.R with comments and print out each major step of the script on the console window so that my code could be more readable.
 
-
-When you are set, just type the command below on your console and see the script performing its magic. :)
+When you are all set, please type the command below on your console and see the script performing its magic. :)
 
 ```run_analysis()```
