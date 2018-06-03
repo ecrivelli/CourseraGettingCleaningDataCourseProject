@@ -23,10 +23,9 @@ Derivated new datasets created by run_analysis R script:
 
 In order to create the SamsungGalaxyS.txt, the **run_analysis.R** script:
 - Merges the training and the test (sets and labels) to create one single data set;
-- Extracts only the measurements on the mean and standard deviation for each measurement;
+- Extracts only the measurements on the mean and standard deviation for each measurement. The command grep with regular expression was used to identify part of measurement labels;
 
-     ```#Extracts only the measurements on the mean and standard deviation for each measurement.
-        xTrain <-  xTrain[, grep("[Mm]ean|[Ss]td", colnames(xTrain))]```
+     ```xTrain <-  xTrain[, grep("[Mm]ean|[Ss]td", colnames(xTrain))]```
         
 - Uses descriptive activity names (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) to name the activities in the data set;
 - Appropriately labels the data set with descriptive variable names.
